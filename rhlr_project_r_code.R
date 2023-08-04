@@ -8,11 +8,7 @@ library(scales)
 setwd("C:/RhlR_project/Figures/Unlabeled/")
 #Ensure the following three files are in the directory: all_transcripts_expression.txt, peaks_average.txt, rhlr_associated_expression_selective.txt
 #Then run this file
-# Data Set-Up -------------------------------------------------------------
-#First need to run python script " " to calculate the total normalized reads for each peak
-#Next run the python script " " to average each pair of peaks for a given size
- 
-#This file, "peaks_average.txt" will be used for graphically representing ChIP enrichment across strains
+# Data Set-Up ------------------------------------------------------------- 
 #First need to select only sites that are associated with RhlR binding
 peaks_avg = read.table("peaks_average.txt", sep = "\t", header= TRUE) #Load the file containin ChIP data
 rhlr_ratio = (peaks_avg[6]/peaks_avg[2]) #Next will find the ratio of WT enrichment / rhlr deletion enrichment and store in a new file
@@ -21,17 +17,6 @@ real_rows = rownames(real_peaks) #then saving the names of this subset to a vect
 peaks_avg_real = peaks_avg[real_rows,] #subset row names are also the index numbers for the rows, which I can use to extrac the rows of the original file that have enrichment reduced by rhlr deletion
 #peaks_avg and peaks_avg_real will both be used to make the ChIP-seq plots
 #peaks_avg_real will be important as it will provide the like of "real" sites for python to select associated genes for
-
-#List of what strain numbers mean for your (and my) convenience
-# 151 = rhlr deletion
-# 154 = rhli deletion
-# 158 = rhli/r double deletion (not used)
-# 222 = wt
-# 271 = pqse deletion (used by RNA-seq)
-# 278 = rhli/pqse double deletion
-# 544 = pqse non-interacting
-# 561 = pqse deletion (used by ChIP)
-# 568 = pqsE catalytically inactive (D73A)
 
 #run python script operon_transcript_expression.py for relavant rockhopper rna-seq alignment .txt
 #this will generate a table containing all genes associated with any binding site
