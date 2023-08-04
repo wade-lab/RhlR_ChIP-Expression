@@ -15,6 +15,7 @@ rhlr_ratio = (peaks_avg[6]/peaks_avg[2]) #Next will find the ratio of WT enrichm
 real_peaks = subset(rhlr_ratio, subset = X222.avg > 1) #Deletion enrichment that is lower than WT enrichment will give numbers >1 which I subset for
 real_rows = rownames(real_peaks) #then saving the names of this subset to a vector
 peaks_avg_real = peaks_avg[real_rows,] #subset row names are also the index numbers for the rows, which I can use to extrac the rows of the original file that have enrichment reduced by rhlr deletion
+write.table(peaks_avg_real[,1], "peaks_average_real.txt", row.names = FALSE, col.names = FALSE, sep="\t")
 #peaks_avg and peaks_avg_real will both be used to make the ChIP-seq plots
 #peaks_avg_real will be important as it will provide the like of "real" sites for python to select associated genes for
 
