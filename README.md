@@ -17,4 +17,8 @@ Prepare the initial table of RNA-seq data:
    - merge_gzip.py
    - binding_transcript_matching.py
    - RNA_seq_Gff.zip
-- 
+- Extract the folder in RNA_seq_Gff.zip
+- For each folder in run 1 and run 3 plus or minus containing RNA-seq duplicates, run merge_gzip and input that folder when prompted
+- Once all duplicates are merged (renaming merged files appropriately), move all from each run with all other merged files from the same run (mainly for convenience)
+- Run Rockhopper, with one experiment for each of the strains, simultaneously. Add both pair ended reads for each replicate, but uncheck the strand specific option in the parameter options. Use the Pseudomonas aeruginosa UCBPP-PA14 replicon for a reference.
+- Rockhopper will generate two relevant files, NC_008463_operons and NC_008463_transcripts.
