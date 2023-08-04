@@ -5,7 +5,7 @@ peak_list = []
 for a in peaks:
     peak_list.append(int(a)) #creating list form of the peak file so I have the coordinated of each peak
 #first determining which genes in the file are associated with an operon
-operon_table = open(input("Enter Rockhopper Output File Path: "),"r")  #"C:/RhlR_project/NC_008463_operons_allvsall.txt"
+operon_table = open(folder + "NC_008463_operons_allvsall.txt","r")  #"C:/RhlR_project/NC_008463_operons_allvsall.txt"
 operon_binding = []
 operon_starts_plus = []
 operon_starts_minus = []
