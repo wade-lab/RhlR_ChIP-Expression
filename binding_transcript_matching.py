@@ -1,6 +1,6 @@
 #In order to run this code will first need to convert the .wig rockhopper output to a .gff (use gff writer from wig)
 folder = input("Enter Path to Folder Containing Needed Files: ")
-peaks = open(input("Enter Path and Name of File Containing Peak Coordinates: ","r") #make sure the folder contains the list of peak coordinates
+peaks = open(folder+"RhlR_peak_coordinates.txt","r") #make sure the folder contains the list of peak coordinates
 peak_list = []
 for a in peaks:
     peak_list.append(int(a)) #creating list form of the peak file so I have the coordinated of each peak
