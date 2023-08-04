@@ -1,5 +1,6 @@
-This file outlines the process needed to replicate the data and several graphs in the paper.
-List of genotype of strains in various datasets:
+Main Data Workflow:
+---------------------
+-  List of genotype of strains in various datasets:
 - 151 = rhlr deletion
 - 154 = rhli deletion
 - 158 = rhli/r double deletion (not used)
@@ -44,4 +45,10 @@ Processing of Data
 - Run the R file, it will generate many of the scatterplots used in this study
 
 Additional Code:
+----------------------
+Determine the presence of MvaT binding sites overlapping with ChIP-sites not affected by RhlR deletion
+- Download:
+   - Castang_MvaT_bound_regions.txt (this data is modified from Castang et al. 2008 doi: 10.1073/pnas.0808215105 supplementary table 1)
+   - Galaxy105-[222_comb_peaks.fasta]_artifact.txt
+   - find_sequence_from_multiblast.py
 - 
