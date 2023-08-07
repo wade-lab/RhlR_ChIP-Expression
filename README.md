@@ -26,7 +26,7 @@ Prepare the initial table of RNA-seq data:
    - Rockhopper (https://cs.wellesley.edu/~btjaden/Rockhopper/)
    - merge_gzip.py
    - binding_transcript_matching.py
-   - RNA_seq_Gff.zip
+   - RNA Seq Data from Simanek et al 2022 (10.1128/spectrum.02108-21)
 - Extract the folder in RNA_seq_Gff.zip
 - For each folder in run 1 and run 3 plus or minus containing RNA-seq duplicates, run merge_gzip and input that folder when prompted
 - Once all duplicates are merged (renaming merged files appropriately), move all from each run with all other merged files from the same run (mainly for convenience)
