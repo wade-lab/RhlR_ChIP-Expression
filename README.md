@@ -14,7 +14,7 @@ Prepare the initial table of ChIP-seq data:
 - Download:
    - sum_ChIP_peaks.py
    - RhlR_peak_coordinates.txt
-   - ChIP-seq Gffs (insert link here when data is uploaded)
+   - ChIP-seq Gffs (https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-12966)
 - Copy ChIP seq gffs into a new folder. This should only contain .gff form data from an alignment of ChIP-seq sequencing output
 - Run the sum_ChIP-peaks.py file
 - Input when prompted, this should include the path to the extracted folder, and the path/name of RhlR_peak_coordinates.txt
@@ -63,5 +63,5 @@ Determine the proportion of the genome which is intergenic and compare number of
    - Genome Length: 6537648 (https://pseudomonas.com/strain/show?id=109)
    - k = 32 (number of intergenic sites)
    - n = 40 (total number of sites)
-- That's pretty much it, the program will print all the values it calculates. Additionally there is a commented out line that generates a p-value for a base to be intergenic which can be used if desired
+- The program will print all the values it calculates. Additionally there is a commented out line that generates a p-value for a base to be intergenic which can be used if desired
 
