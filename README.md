@@ -27,11 +27,12 @@ Prepare the initial table of RNA-seq data:
    - Rockhopper (https://cs.wellesley.edu/~btjaden/Rockhopper/)
    - merge_gzip.py
    - binding_transcript_matching.py
-   - RNA Seq Data from Simanek et al 2022 (10.1128/spectrum.02108-21)
-- Extract the folder in RNA_seq_Gff.zip
-- For each folder in run 1 and run 3 plus or minus containing RNA-seq duplicates, run merge_gzip and input that folder when prompted
+   - RNA Seq Data from Simanek et al 2022 (10.1128/spectrum.02108-21 , https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP351361&o=acc_s%3Aa)
+- Download all biological replicates
+- Separate the pairs of replicate fastq files for each strain number into new folders
+- Run merge_gzip.py on each folder to merge the duplicates
 - Once all duplicates are merged (renaming merged files appropriately), move all from each run with all other merged files from the same run (mainly for convenience)
-- Run Rockhopper, with one experiment for each of the strains, simultaneously. Add both pair ended reads for each replicate, but uncheck the strand specific option in the parameter options. Use the Pseudomonas aeruginosa UCBPP-PA14 replicon for a reference.
+- Run Rockhopper, with one experiment for each of the strains, simultaneously. Uncheck the strand specific option in the parameter options. Use the Pseudomonas aeruginosa UCBPP-PA14 replicon for a reference.
 - Rockhopper will generate two relevant files, NC_008463_operons.txt and NC_008463_transcripts.txt. Ensure they are named NC_008463_operons_allvsall.txt and NC_008463_operons_allvsall.txt, move them to a folder with RhlR_peak_coordinates.txt
 - Run binding_transcript_matching.py, when prompted input the path to the folder containing the files from the previous step
 - this will provide two output files, one listing all operons with an internal or upstream binding site, one with the final table containing all genes with an internal or upstream binding site or in an operon with an upstream binding site
