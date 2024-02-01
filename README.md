@@ -15,7 +15,8 @@ Prepare the initial table of ChIP-seq data:
    - sum_ChIP_peaks.py
    - RhlR_peak_coordinates.txt
    - ChIP-seq Gffs (https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-12966)
-- Copy ChIP seq gffs into a new folder. This should only contain .gff form data from an alignment of ChIP-seq sequencing output
+- For each of the ChIP-seq Gffs, run "normalize_gff.py"
+- Copy the normalized ChIP seq gffs into a new folder. This should only contain .gff form data from an alignment of ChIP-seq sequencing output
 - Run the sum_ChIP-peaks.py file
 - Input when prompted, this should include the path to the extracted folder, and the path/name of RhlR_peak_coordinates.txt
   - This will produce a new file titled Peak_size_output.txt in the file containing the ChIP .gffs. This will be a table containing peak values
