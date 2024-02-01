@@ -9,7 +9,14 @@ Created on Mon Jun  5 11:18:46 2023
 # This script combines both plus and minus reads and normalizes both by their combined sum
 # When you copy the file name as a path in windows 11 it will automatically include quotes, but those will be read
 # into the character string from the input function and not be a functional path, so make sure to only input the raw path
-gff = open(input("Enter Path of .gff file (No Quotes!): "), "r")
+import os
+import tkinter as tk
+from tkinter import filedialog
+root = tk.Tk()
+root.withdraw()
+file=filedialog.askopenfilename()
+#gff = open(input("Enter Path of .gff file (No Quotes!): "), "r")
+gff = open(file, "r")
 enrichment = []
 for line in gff:
     line_list = line.split("\t")
@@ -23,8 +30,12 @@ reads_sum = sum(pos_enrichment)
 normalized_reads = []
 for number in enrichment:
     normalized_reads.append(100000000*(number/reads_sum)) #normalizing by reads/total reads and multiplying that by 100 million
-output = open(input("Enter Path/Name of Normalized File: "),"w")
+#output = open(input("Enter Path/Name of Normalized File: "),"w")
+root = tk.Tk()
+root.withdraw()
+filedir=filedialog.askdirectory()
 line_number = 0
+output = open(filedir + "/" + "norm_" + os.path.basename(file), "w")
 gff.seek(0) #Need to make sure the gff is being read from the start for the next for loop
 new_label = input("Enter New Track Label for File (No Quotes!): ")
 for line in gff:
